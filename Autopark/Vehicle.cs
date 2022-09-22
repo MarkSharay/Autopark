@@ -6,30 +6,42 @@ using System.Threading.Tasks;
 
 namespace Autopark
 {
-    public class Vehicle:IComparable
+    public class Vehicle:IComparable<Vehicle>
     {
         public VehicleType Type { get; set; }
         public string Model { get; set; }
         public string Number { get; set; }
         public double Weight { get; set; }
         public int Year { get; set; }
+        public int MileAge { get; set; }
         public Colors Color { get; set; }
         public double Volume { get; set; }
+
+        public Vehicle(VehicleType type, string model, string number, double weight, int year, int mileAge, Colors color, double volume)
+        {
+            Type = type;
+            Model = model;
+            Number = number;
+            Weight = weight;
+            Year = year;
+            MileAge = mileAge;
+            Color = color;
+            Volume = volume;
+        }
 
         public double GetCalcTaxPerMonth()
         {
             return (this.Weight * 0.00013) + (Type.TaxCoefficient * 30) + 5;
         }
-        int IComparable.CompareTo(Object v)
+        public int CompareTo(Vehicle v)
         {
-            Vehicle vehicle = (Vehicle)v;
-
-            if(vehicle != null)
+  
+            if(v != null)
             {
-                if(this.GetCalcTaxPerMonth() < vehicle.GetCalcTaxPerMonth())
+                if(this.GetCalcTaxPerMonth() < v.GetCalcTaxPerMonth())
                 {
                     return -1;
-                }else if(this.GetCalcTaxPerMonth() > vehicle.GetCalcTaxPerMonth())
+                }else if(this.GetCalcTaxPerMonth() > v.GetCalcTaxPerMonth())
                 {
                     return 1;
                 }
@@ -40,7 +52,7 @@ namespace Autopark
             }
             else
             {
-                throw new Exception("Parameter must to be Vehicle type");
+                throw new Exception("Null value was emitted");
             }
         }
 
