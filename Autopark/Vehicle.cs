@@ -9,6 +9,8 @@ namespace Autopark
     public class Vehicle:IComparable<Vehicle>
     {
         public VehicleType Type { get; set; }
+
+        public Engine EngineType { get; set; }
         public string Model { get; set; }
         public string Number { get; set; }
         public double Weight { get; set; }
@@ -17,9 +19,10 @@ namespace Autopark
         public Colors Color { get; set; }
         public double Volume { get; set; }
 
-        public Vehicle(VehicleType type, string model, string number, double weight, int year, int mileAge, Colors color, double volume)
+        public Vehicle(VehicleType type, Engine engineType, string model, string number, double weight, int year, int mileAge, Colors color, double volume)
         {
             Type = type;
+            EngineType = engineType;
             Model = model;
             Number = number;
             Weight = weight;
@@ -54,6 +57,12 @@ namespace Autopark
             {
                 throw new Exception("Null value was emitted");
             }
+        }
+
+        public override bool Equals(object? obj)
+        {
+            Vehicle vehicle = (Vehicle)obj;
+            return this.Type.TypeName == vehicle.Type.TypeName && this.Model == vehicle.Model;
         }
 
     }
