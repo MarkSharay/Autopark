@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace Autopark
 {
-    internal class CombustionEngine : Engine
+    internal class AbstractCombustionEngine : AbstractEngine
     {
         protected double engineCapacity { get; set; }
         protected double fuelConsuptionPer100 { get; set; }
 
-        public double GetMaxKilometers(double fuelTankCapacity)
+        public override double GetMaxKilometers(double fuelTankCapacity)
         {
             return fuelTankCapacity*100/fuelConsuptionPer100;
         }
 
-        public CombustionEngine(string typeName, double taxCoefficient) 
+        public AbstractCombustionEngine(string typeName, double taxCoefficient) 
             : base(typeName, taxCoefficient) { }
         
 

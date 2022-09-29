@@ -10,7 +10,7 @@ namespace Autopark
     {
         public VehicleType Type { get; set; }
 
-        public Engine EngineType { get; set; }
+        public AbstractEngine EngineType { get; set; }
         public string Model { get; set; }
         public string Number { get; set; }
         public double Weight { get; set; }
@@ -19,7 +19,7 @@ namespace Autopark
         public Colors Color { get; set; }
         public double Volume { get; set; }
 
-        public Vehicle(VehicleType type, Engine engineType, string model, string number, double weight, int year, int mileAge, Colors color, double volume)
+        public Vehicle(VehicleType type, AbstractEngine engineType, string model, string number, double weight, int year, int mileAge, Colors color, double volume)
         {
             Type = type;
             EngineType = engineType;

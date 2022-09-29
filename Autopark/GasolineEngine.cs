@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Autopark
 {
-    internal class GasolineEngine : CombustionEngine
+    internal class GasolineEngine : AbstractCombustionEngine
     {
         public GasolineEngine(double engineCapacity, double fuelConsumptionPer100)
             :base("Gasoline", 1)

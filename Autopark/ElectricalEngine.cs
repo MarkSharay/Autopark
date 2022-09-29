@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Autopark
 {
-    internal class ElectricalEngine : Engine
+    internal class ElectricalEngine : AbstractEngine
     {
         double electricityConsuption { get; set; }
         public ElectricalEngine(double electricityConsumption) : base("Electrical", 0.1)
         {
             this.electricityConsuption = electricityConsumption;
         }
-        double GetMaxKilometers(double battarySize)
+        public override double GetMaxKilometers(double battarySize)
         {
             return battarySize / electricityConsuption;
         }
