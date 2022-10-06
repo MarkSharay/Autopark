@@ -17,5 +17,10 @@ namespace Autopark
             this.taxCoefficient = taxCoefficient;
         }
         public abstract double GetMaxKilometers(double fuelTank);
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

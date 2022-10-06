@@ -8,19 +8,21 @@ namespace Autopark
 {
     public class Vehicle:IComparable<Vehicle>
     {
+        public int Id { get; private set; }
+        public List<Rent> Rents { get; private set; }
         public VehicleType Type { get; set; }
+        public AbstractEngine EngineType { get; private set; }
+        public string Model { get; private set; }
+        public string Number { get; private set; }
+        public double Weight { get; private set; }
+        public int Year { get; private set; }
+        public int MileAge { get; private set; }
+        public Colors Color { get; private set; }
+        public double Volume { get; private set; }
 
-        public AbstractEngine EngineType { get; set; }
-        public string Model { get; set; }
-        public string Number { get; set; }
-        public double Weight { get; set; }
-        public int Year { get; set; }
-        public int MileAge { get; set; }
-        public Colors Color { get; set; }
-        public double Volume { get; set; }
-
-        public Vehicle(VehicleType type, AbstractEngine engineType, string model, string number, double weight, int year, int mileAge, Colors color, double volume)
+        public Vehicle(int id, VehicleType type,  string model, string number, double weight, int year, int mileAge, Colors color, AbstractEngine engineType, double volume)
         {
+            Id = id;
             Type = type;
             EngineType = engineType;
             Model = model;
@@ -30,8 +32,22 @@ namespace Autopark
             MileAge = mileAge;
             Color = color;
             Volume = volume;
+            Rents = new List<Rent>();
         }
 
+        public double GetTotalIncome()
+        {
+            double sum = 0;
+            foreach(Rent rent in Rents)
+            {
+                sum += rent.Cost;
+            }
+            return sum;
+        }
+        public double GetTotalProfit()
+        {
+            return GetTotalIncome()-GetCalcTaxPerMonth();
+        }
         public double GetCalcTaxPerMonth()
         {
             return (this.Weight * 0.00013) + (Type.TaxCoefficient * 30) + 5;
@@ -63,6 +79,12 @@ namespace Autopark
         {
             Vehicle vehicle = (Vehicle)obj;
             return this.Type.TypeName == vehicle.Type.TypeName && this.Model == vehicle.Model;
+        }
+
+        public override string ToString()
+        {
+            //return $"{Id};{Type};{Model};{Number};{Weight};{Year};{MileAge};{Color.ToString()};{EngineType.ToString()};{Volume}";
+            return Model.ToString();
         }
 
     }

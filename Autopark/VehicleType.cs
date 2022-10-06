@@ -8,15 +8,17 @@ namespace Autopark
 {
     public class VehicleType
     {
+        public int Id { get; private set; }
         public string TypeName { get; private set; }
-        public double TaxCoefficient { get; set; }
+        public double TaxCoefficient { get; private set; }
 
         public VehicleType()
         {
             TypeName = string.Empty;
         }
-        public VehicleType(string typeName, double taxCoefficient = 1)
+        public VehicleType(int id,string typeName, double taxCoefficient = 1)
         {
+            Id = id;
             TypeName = typeName;
             TaxCoefficient = taxCoefficient;
         }
@@ -37,7 +39,7 @@ namespace Autopark
         }
         public override string ToString()
         {
-            return $"{TypeName}, {TaxCoefficient}";
+            return $"{Id};{TypeName};{TaxCoefficient}";
         }
     }
 }

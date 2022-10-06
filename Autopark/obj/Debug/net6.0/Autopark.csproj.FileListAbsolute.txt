@@ -1,0 +1,15 @@
+D:\net core\incubator tasks\Autopark\Autopark\bin\Debug\net6.0\Autopark.exe
+D:\net core\incubator tasks\Autopark\Autopark\bin\Debug\net6.0\Autopark.deps.json
+D:\net core\incubator tasks\Autopark\Autopark\bin\Debug\net6.0\Autopark.runtimeconfig.json
+D:\net core\incubator tasks\Autopark\Autopark\bin\Debug\net6.0\Autopark.dll
+D:\net core\incubator tasks\Autopark\Autopark\bin\Debug\net6.0\Autopark.pdb
+D:\net core\incubator tasks\Autopark\Autopark\obj\Debug\net6.0\Autopark.csproj.AssemblyReference.cache
+D:\net core\incubator tasks\Autopark\Autopark\obj\Debug\net6.0\Autopark.GeneratedMSBuildEditorConfig.editorconfig
+D:\net core\incubator tasks\Autopark\Autopark\obj\Debug\net6.0\Autopark.AssemblyInfoInputs.cache
+D:\net core\incubator tasks\Autopark\Autopark\obj\Debug\net6.0\Autopark.AssemblyInfo.cs
+D:\net core\incubator tasks\Autopark\Autopark\obj\Debug\net6.0\Autopark.csproj.CoreCompileInputs.cache
+D:\net core\incubator tasks\Autopark\Autopark\obj\Debug\net6.0\Autopark.dll
+D:\net core\incubator tasks\Autopark\Autopark\obj\Debug\net6.0\refint\Autopark.dll
+D:\net core\incubator tasks\Autopark\Autopark\obj\Debug\net6.0\Autopark.pdb
+D:\net core\incubator tasks\Autopark\Autopark\obj\Debug\net6.0\Autopark.genruntimeconfig.cache
+D:\net core\incubator tasks\Autopark\Autopark\obj\Debug\net6.0\ref\Autopark.dll
