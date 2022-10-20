@@ -24,7 +24,7 @@ namespace Autopark
             string[] VehicleTypesCsvLines = File.ReadAllLines(path);
             foreach (string line in VehicleTypesCsvLines)
             {
-                vehicleTypes.Add (new VehicleType(line));
+                vehicleTypes.Add (createVehicleType(line));
             }
             return vehicleTypes;
         }
@@ -68,7 +68,7 @@ namespace Autopark
         {
             double forFormatExeption;
             string[] parameters = csvVehicle.Split(";");
-            Vehicle vehicle = new Vehicle(int.Parse(parameters[0]), new VehicleType(1, "Bus", 1.2),
+            Vehicle vehicle = new Vehicle(int.Parse(parameters[0]), VehicleTypes[int.Parse(parameters[1])-1],
                     parameters[2], parameters[3], double.Parse(parameters[4]), int.Parse(parameters[5]),
                     int.Parse(parameters[6]), (Colors)Enum.Parse(typeof(Colors), parameters[7]),
                     EngineCreator.CreateEngine(parameters[8], double.TryParse(parameters[9], out forFormatExeption) ? double.Parse(parameters[9]) : 0,

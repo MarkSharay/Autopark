@@ -31,6 +31,7 @@ foreach(Vehicle v in cols.Vehicles)
         {
             stack.Pop();
         }
+        stack.Push(v);
     }
 }
 
