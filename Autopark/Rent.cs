@@ -8,7 +8,7 @@ namespace Autopark
 {
     public class Rent
     {
-        public DateTime date { get; set; }
+        public DateTime date { get; set; } // CamelCase
 
         public double Cost { get; private set; }
 

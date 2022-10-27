@@ -12,7 +12,7 @@ namespace Autopark
             :base("Gasoline", 1)
         {
             this.engineCapacity = engineCapacity;
-            this.fuelConsuptionPer100 = fuelConsumptionPer100;
+            this.fuelConsuptionPer100 = fuelConsumptionPer100; // Not necessary to use 'this' here
         }
     }
 }

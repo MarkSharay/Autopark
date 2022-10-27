@@ -20,6 +20,9 @@ namespace Autopark
         public Colors Color { get; private set; }
         public double Volume { get; private set; }
 
+        
+        // Where is default constructor?
+
         public Vehicle(int id, VehicleType type,  string model, string number, double weight, int year, int mileAge, Colors color, AbstractEngine engineType, double volume)
         {
             Id = id;
@@ -50,17 +53,17 @@ namespace Autopark
         }
         public double GetCalcTaxPerMonth()
         {
-            return (this.Weight * 0.00013) + (Type.TaxCoefficient * 30) + 5;
+            return (this.Weight * 0.00013) + (Type.TaxCoefficient * 30) + 5; // Not necessary to use 'this' here
         }
         public int CompareTo(Vehicle v)
         {
   
             if(v != null)
             {
-                if(this.GetCalcTaxPerMonth() < v.GetCalcTaxPerMonth())
+                if(this.GetCalcTaxPerMonth() < v.GetCalcTaxPerMonth()) // Not necessary to use 'this' here
                 {
                     return -1;
-                }else if(this.GetCalcTaxPerMonth() > v.GetCalcTaxPerMonth())
+                }else if(this.GetCalcTaxPerMonth() > v.GetCalcTaxPerMonth()) // Not necessary to use 'this' here
                 {
                     return 1;
                 }
@@ -78,7 +81,7 @@ namespace Autopark
         public override bool Equals(object? obj)
         {
             Vehicle vehicle = (Vehicle)obj;
-            return this.Type.TypeName == vehicle.Type.TypeName && this.Model == vehicle.Model;
+            return this.Type.TypeName == vehicle.Type.TypeName && this.Model == vehicle.Model; // Not necessary to use 'this' here
         }
 
         public override string ToString()

@@ -9,7 +9,7 @@ namespace Autopark
     public abstract class AbstractEngine
     {
         string Name { get; set; }
-        double taxCoefficient { get; set; }
+        double taxCoefficient { get; set; } // CamelCase
 
         public AbstractEngine(string name, double taxCoefficient)
         {

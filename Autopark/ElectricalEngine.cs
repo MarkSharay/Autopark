@@ -8,10 +8,10 @@ namespace Autopark
 {
     internal class ElectricalEngine : AbstractEngine
     {
-        double electricityConsuption { get; set; }
+        double electricityConsuption { get; set; } // CamelCase
         public ElectricalEngine(double electricityConsumption) : base("Electrical", 0.1)
         {
-            this.electricityConsuption = electricityConsumption;
+            this.electricityConsuption = electricityConsumption; // Not necessary to use 'this' here
         }
         public override double GetMaxKilometers(double battarySize)
         {

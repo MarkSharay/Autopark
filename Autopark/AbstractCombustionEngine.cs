@@ -8,10 +8,10 @@ namespace Autopark
 {
     internal class AbstractCombustionEngine : AbstractEngine
     {
-        protected double engineCapacity { get; set; }
-        protected double fuelConsuptionPer100 { get; set; }
+        protected double engineCapacity { get; set; } // CamelCase
+        protected double fuelConsuptionPer100 { get; set; } // CamelCase
 
-        public override double GetMaxKilometers(double fuelTankCapacity)
+        public override double GetMaxKilometers(double fuelTankCapacity) // Method should be placed after constructor
         {
             return fuelTankCapacity*100/fuelConsuptionPer100;
         }
