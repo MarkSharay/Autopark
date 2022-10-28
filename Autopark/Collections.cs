@@ -8,7 +8,7 @@ namespace Autopark
 {
     public class Collections
     {
-        List<VehicleType> VehicleTypes { get; set; }
+        List<VehicleType> VehicleTypes { get; set; } // Add access modifier
         public List<Vehicle> Vehicles { get; set; }
 
         public Collections(string types, string vehicles, string rents)
@@ -43,7 +43,7 @@ namespace Autopark
 
         public void LoadRents(string path)
         {
-            List<Rent> rents = new List<Rent>();
+            List<Rent> rents = new List<Rent>(); // Unused variable
             string[] RentsCsvLines = File.ReadAllLines(path);
             foreach(string line in RentsCsvLines)
             {
@@ -57,14 +57,14 @@ namespace Autopark
                 }
             }
         }
-        VehicleType createVehicleType(string csvVehicleType)
+        VehicleType createVehicleType(string csvVehicleType) //methods' names should start with capital letter // Add access modifier
         {
             string[] parameters = csvVehicleType.Split(";");
             VehicleType vh = new VehicleType(int.Parse(parameters[0]), parameters[1], double.Parse(parameters[2]));
             return vh;
         }
 
-        Vehicle createVehicle(string csvVehicle)
+        Vehicle createVehicle(string csvVehicle) //methods' names should start with capital letter // Add access modifier
         {
             double forFormatExeption;
             string[] parameters = csvVehicle.Split(";");

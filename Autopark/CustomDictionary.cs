@@ -8,7 +8,7 @@ namespace Autopark
 {
     internal class CustomDictionary
     {
-        Dictionary<string, int> dict = new Dictionary<string, int>();
+        Dictionary<string, int> dict = new Dictionary<string, int>(); // Add access modifier. It's better to initialize this variable in the constructor.
 
         public IEnumerable<string> LoadOrders(string path)
         {
@@ -26,7 +26,7 @@ namespace Autopark
 
         public CustomDictionary(string path)
         {
-            List<string> list = this.LoadOrders(path).ToList();
+            List<string> list = this.LoadOrders(path).ToList(); //no needs to use 'this'
             
             foreach(string el in list)
             {

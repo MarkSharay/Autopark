@@ -1,6 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Autopark;
 
+// CurrentCulture, Levels 
+
 Collections cols = new Collections("types.csv", "vehicles.csv", "rents.csv");
 
 cols.Print();

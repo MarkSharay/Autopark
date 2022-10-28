@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Autopark
 {
-    internal class CustomQueue<T> where T : Vehicle
+    internal class CustomQueue<T> where T : Vehicle //let's discuss this implementation
     {
-        T[] values;
+        T[] values; // Add access modifier
 
-        int head = -1;
+        int head = -1; // Add access modifier
 
-        int tail = -1;
+        int tail = -1; // Add access modifier
 
         public CustomQueue(){
             values = new T[0];

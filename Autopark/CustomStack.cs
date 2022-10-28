@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace Autopark
 {
-    internal class CustomStack<T> where T : Vehicle
+    internal class CustomStack<T> where T : Vehicle //let's discuss this implementation
     {
-        T?[] values;
+        T?[] values; // Add access modifier
 
-        readonly int _count;
+        readonly int _count; // Add access modifier
 
         private int counter;
-
         public CustomStack(int count)
         {
             _count = count;
@@ -28,7 +27,7 @@ namespace Autopark
 
                 return false;
             }
-            else
+            else // no needs to use else block
             {
                 values[counter] = obj;
                 Console.WriteLine($"{obj.ToString()} приехал в гараж");
@@ -44,7 +43,7 @@ namespace Autopark
                 Console.WriteLine("В гараже нет машин");
                 return false;
             }
-            else
+            else // no needs to use else block
             {
                 Console.WriteLine($"{values[counter - 1].ToString()} выехал");
                 values[counter - 1] = null;
